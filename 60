@@ -1,0 +1,117 @@
+ pakage.json 
+ 
+{
+  "dependencies": {
+    "firebase": "7.9.0",
+    "react-native-paper": "3.6.0",
+    "expo-av": "~8.7.0",
+    "expo-asset": "~8.2.1",
+    "expo-constants": "~9.3.3",
+    "react-navigation": "4.0.10",
+    "@react-navigation/native": "^3.6.2",
+    "@expo/vector-icons": "^12.0.0"
+  }
+}
+______________________________________
+config.js
+
+import firebase from 'firebase';
+
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+export default firebase.database();
+
+________________________________________---
+
+
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import db from './config';
+
+export default class App extends Component {
+  constructor() {
+    super();
+
+  }
+
+  showTeamRanks = () => {
+
+
+=> {
+      var teamList = data.val();
+      for (var team in teamList) {
+        if (teamList[team]['isButtonPressed'] === true) {
+
+
+
+        }
+      }
+
+
+      });
+
+
+      teams = [];
+    });
+  };
+
+  resetDb = () => {
+    var restDatabase = db.ref('teams/').set({
+      red: {
+
+
+      },
+      green: {
+        isButtonPressed: false,
+        timestamp: 0,
+      },
+      blue: {
+        isButtonPressed: false,
+        timestamp: 0,
+      },
+      yellow: {
+        isButtonPressed: false,
+        timestamp: 0,
+      },
+    });
+
+
+  };
+
+  componentDidMount() {
+
+
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <View
+          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          {   ((team) => (
+            <View
+              style={{
+                width: 140,
+                height: 55,
+                borderWidth: 2,
+                margin: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: team.teamName,
+              }}>
+              <Text>{team.teamName.toUpperCase()}</Text>
+            </View>
+          ))}
+        </View>
+        <Button
+
+
+
+        />
+      </View>
+    );
+  }
+}
