@@ -1,3 +1,40 @@
+ ____Base de datos
+ 
+ import firebase from 'firebase';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCH3aQ1X0txE25pUgJRlgsbybU4v-A715o",
+  authDomain: "wireless-buzzer-fb356.firebaseapp.com",
+  databaseURL: "https://wireless-buzzer-fb356-default-rtdb.firebaseio.com",
+  projectId: "wireless-buzzer-fb356",
+  storageBucket: "wireless-buzzer-fb356.appspot.com",
+  messagingSenderId: "905718091383",
+  appId: "1:905718091383:web:90e90fb37be6abd5ba4072",
+  measurementId: "G-P66FX4F8M9"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+export default firebase.database();
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  pakage.json 
  
 {
